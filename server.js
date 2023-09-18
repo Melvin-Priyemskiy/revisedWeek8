@@ -5,21 +5,9 @@ const port = 3000;
 app.use('/pb', express.static('public'));
 
 
-const budget = {
-    myBudget: [
-    {
-        title: 'Eat out',
-        budget: 356
-    },
-    {
-        title: 'Rent',
-        budget: 375
-    },
-    {
-        title: 'Grocery',
-        budget: 110
-    },
-]};
+
+const budgetBackEnd = require('./budget.json');
+
 
 
 app.get('/', (req, res) => {
@@ -27,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/budget', (req, res) => {
-    res.json(budget);
+    res.json(budgetBackEnd);
 });
 
 app.listen(port, () => {
