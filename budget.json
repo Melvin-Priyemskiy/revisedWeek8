@@ -1,31 +1,38 @@
 {
     "myBudget": [
     {
-        "title": "'Eat out'",
-        "budget": 100
+        "title": "Eat out",
+        "budget": 100,
+        "color": "#ffcd56"
     },
     {
         "title": "Grocery",
-        "budget": 300
+        "budget": 300,
+        "color": "#ff6384"
     },
     {
         "title": "Gifts",
-        "budget": 200
+        "budget": 200,
+        "color": "#36a2eb"        
     },
     {
         "title": "Gym",
-        "budget": 500
+        "budget": 500,
+        "color": "#fd6b19"
     },
     {
         "title": "Rent",
-        "budget": 1000
+        "budget": 1000,
+        "color": "#f84fdd"
     },
     {
         "title": "Bills",
-        "budget": 50
+        "budget": 50,
+        "color": "#07dec3"
     },
     {
         "title": "gas",
-        "budget": 100
+        "budget": 100,
+        "color": "#43c088"
     }
 ]}
