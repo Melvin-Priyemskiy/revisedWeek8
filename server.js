@@ -35,13 +35,37 @@ const mongoose = require("mongoose")
 let url = 'mongodb://127.0.0.1:27017/mongodb_demo';
 
 
+
+
+
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true })
     .then(() =>{
         console.log("connected");
 
-        let newData = new nameSchema({myBudget:{title: "phone", budget: 24, color: "#16727b"}})
+        // nameSchema.find({})
+        // .then((data)=>{
+        //     console.log(dataSource)
+        // })
+        // .catch((connectionError)=>{
+        //     console.log("error: retrieve1")
+        // })
 
-        // get data
+
+        //get data
+       // let newData = new nameSchema({id:13, name:"testing"})
+        let newData = new nameSchema({myBudget: [{title: "dorm", budget: 240, color: "#16727b"}]})
+
+        nameSchema.insertMany([newData])
+            .then((data)=>{
+                console.log(data)
+                //mongoose.connection.close()
+            })
+            .catch((connectionError)=>{
+                console.log("error: insert")
+            })
+
+
+  // get data
         nameSchema.find({})
             .then((data)=>{
                 dataSource = data
@@ -49,19 +73,21 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true })
                 mongoose.connection.close()
             })
             .catch((connectionError)=>{
-                console.log("error cannont get dataS")
+                console.log("error: retrieve2")
             })
+
 
     })
     .catch((connectionError) =>{
         console.log("an error for");
     })
 
+
     ///*****************************************************************************************88 */
 
 
 app.get('/', (req, res) => {
-    res.send(dataSource);
+    res.send([dataSource]);
 });
 
 app.get('/budget', (req, res) => {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const nameSchema = new mongoose.Schema({
-    myBudget: [{
+myBudget: [{
         title: {
                 type: String,
                 trim: true,
@@ -20,6 +20,8 @@ const nameSchema = new mongoose.Schema({
             uppercase: false
         }
     }]
-}, {collection: 'budjet'})
 
-module.exports = mongoose.model('budjet', nameSchema)
+}
+, {collection: 'm'})
+
+module.exports = mongoose.model('m', nameSchema)

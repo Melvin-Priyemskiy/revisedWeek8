@@ -8,7 +8,7 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true })
         console.log("connected");
 
         //get data
-        let newData = new nameSchema({myBudget: [{title: "test", budget: 24, color: "#16727b"}]})
+        let newData = new nameSchema({myBudget: [{title: "teaaast", budget: 241, color: "#16827b"}]})
 
         nameSchema.insertMany([newData])
             .then((data)=>{

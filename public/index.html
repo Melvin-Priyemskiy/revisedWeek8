@@ -176,12 +176,14 @@
             .then(function(res)
             {
                 console.log(res.data);
-                console.log("this is here   "+res.data[0].myBudget.length);
-                for(var i = 0; i < res.data[0].myBudget.length; i++)
+                console.log(res.data[0][0]);
+                console.log("this is here   "+res.data[0][0].myBudget[0].title);
+               // console.log("thisjhbjhbjhjhjjjjjjj  "+res.data[0].myBudget.length);
+                for(var i = 0; i < res.data[0].length; i++)
                 {
-                    dataSource.datasets[0].data[i] = res.data[0].myBudget[i].budget;
-                    dataSource.datasets[0].backgroundColor[i] = res.data[0].myBudget[i].color;
-                    dataSource.labels[i] = res.data[0].myBudget[i].title;
+                    dataSource.datasets[0].data[i] = res.data[0][i].myBudget[0].budget;
+                    dataSource.datasets[0].backgroundColor[i] = res.data[0][i].myBudget[0].color;
+                    dataSource.labels[i] = res.data[0][i].myBudget[0].title;
                 }
                 createChart();
             });
